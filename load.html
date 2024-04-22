@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading</title>
     <style>
-        #prog{
-            width: 30%;
-            height: 10vh;
-            background-color: white;
-        }
+      #prog {
+        width: 30%;
+        height: 10vh;
+        background-color: white;
+      }
     </style>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
     <h1 id="title">Loading...</h1>
     <progress value="0" max="100" id="prog"></progress>
     <h3 id="per"></h3>
     <script>
-        var prog = document.querySelector('#prog')
-        var val = prog.value;
-        var per = document.querySelector('#per');
-        var id = setInterval(frame,100)
-        function frame(){
-            if(val>=100){
-                clearInterval(id)
-                window.location.replace("./main.html");
-            }
-            prog.value = val;
-            val++;
-            per.innerText = val-1+"%"
-            console.log(val)
+      var prog = document.querySelector("#prog");
+      var val = prog.value;
+      var per = document.querySelector("#per");
+      var id = setInterval(frame, 100);
+      function frame() {
+        if (val >= 100) {
+          clearInterval(id);
+          window.location.replace("./main.html");
         }
+        prog.value = val;
+        val++;
+        per.innerText = val - 1 + "%";
+        console.log(val);
+      }
     </script>
-</body>
+  </body>
 </html>
